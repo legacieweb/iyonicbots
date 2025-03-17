@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ✅ Basic Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ✅ SEO Title -->
+    <title>Sign Up for IyonicBots | AI Automation & Business Growth</title>
+
+    <!-- ✅ Meta Description (Boosts Click-Through Rate) -->
+    <meta name="description" content="Create your IyonicBots account and access AI automation tools like AI Chatbots, Sales Bots, and Voice Assistants. Enhance your business efficiency today!">
+
+    <!-- ✅ Keywords (SEO Focus) -->
+    <meta name="keywords" content="AI chatbot signup, business AI automation, IyonicBots registration, AI sales bot, voice assistant signup, business AI tools, chatbot account create">
+
+    <!-- ✅ Robots Meta Tag (Ensure Indexing) -->
+    <meta name="robots" content="index, follow">
+
+    <!-- ✅ Open Graph (Social Media Preview) -->
+    <meta property="og:title" content="Sign Up for IyonicBots | AI Business Automation">
+    <meta property="og:description" content="Register now to access AI-powered automation tools for business success.">
+    <meta property="og:image" content="https://cdn-icons-png.flaticon.com/512/4712/4712027.png">
+    <meta property="og:url" content="https://iyonicbots.iyonicorp.com/signup">
+    <meta property="og:type" content="website">
+
+    <!-- ✅ Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Sign Up for IyonicBots | AI Business Automation">
+    <meta name="twitter:description" content="Create an account to access AI-driven chatbots, automation, and business AI solutions.">
+    <meta name="twitter:image" content="https://cdn-icons-png.flaticon.com/512/4712/4712027.png">
+
+    <!-- ✅ Canonical URL (Avoid Duplicate Content Issues) -->
+    <link rel="canonical" href="https://iyonicbots.iyonicorp.com/signup">
+
+    <!-- ✅ Favicon -->
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/4712/4712027.png" type="image/x-icon">
+
+    <style>
+        /* Smooth background animation */
+        body {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            background: linear-gradient(135deg, #1e1e2f, #3a3a5e);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Floating particles */
+        .background-animation {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            animation: floatUp 5s infinite linear;
+        }
+
+        @keyframes floatUp {
+            from { transform: translateY(100vh); opacity: 1; }
+            to { transform: translateY(-10vh); opacity: 0; }
+        }
+
+        /* Form container styling */
+        .form-container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            width: 350px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+            animation: fadeIn 1.2s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        /* Input fields */
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        input:focus {
+            transform: scale(1.05);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+        }
+
+        /* Submit button */
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 15px;
+            border-radius: 5px;
+            border: none;
+            background: linear-gradient(90deg, #ff6600, #ff9900);
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Button glow effect */
+        button::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.3);
+            transition: 0.4s;
+        }
+
+        button:hover::before {
+            left: 100%;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(255, 165, 0, 0.8);
+        }
+
+        /* Login switch text */
+        .switch {
+            margin-top: 15px;
+        }
+
+        .switch a {
+            color: #ff9900;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .switch a:hover {
+            text-decoration: underline;
+            color: #ff6600;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="background-animation"></div>
+
+    <div class="form-container">
+        <h2 style="color: white;">Create Your Account</h2>
+        <form onsubmit="registerUser(event)">
+            <input type="text" id="name" placeholder="Full Name" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button type="submit">Sign Up</button>
+        </form>
+        <p class="switch">Already have an account? <a href="../login">Login</a></p>
+    </div>
+
+    <script>
+        async function registerUser(event) {
+            event.preventDefault();
+
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+
+            const response = await fetch("https://iyonicbots.onrender.com/register", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ name, email, password }),
+            });
+
+            const data = await response.json();
+            if (response.status === 201) {
+                alert(data.message);
+                window.location.href = "../login";
+            } else {
+                alert(data.message);
+            }
+        }
+
+        // Create floating particles dynamically
+        function createParticles() {
+            const numParticles = 30;
+            const container = document.querySelector('.background-animation');
+
+            for (let i = 0; i < numParticles; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.animationDuration = `${Math.random() * 3 + 2}s`;
+                particle.style.width = particle.style.height = `${Math.random() * 8 + 4}px`;
+                container.appendChild(particle);
+            }
+        }
+
+        createParticles();
+    </script>
+
+</body>
+</html>

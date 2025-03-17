@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ✅ Basic Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ✅ SEO Title -->
+    <title>IyonicBots Business GPT | AI Chatbot for Business Growth</title>
+
+    <!-- ✅ Meta Description (Boosts Click-Through Rate) -->
+    <meta name="description" content="Leverage IyonicBots Business GPT for AI-powered automation, smart customer interactions, and business process optimization. Enhance efficiency with AI today!">
+
+    <!-- ✅ Keywords (SEO Focus) -->
+    <meta name="keywords" content="AI Business GPT, AI chatbot, business automation, AI virtual assistant, smart AI chatbot, IyonicBots AI, business AI solutions">
+
+    <!-- ✅ Robots Meta Tag (Ensure Indexing) -->
+    <meta name="robots" content="index, follow">
+
+    <!-- ✅ Open Graph (Social Media Preview) -->
+    <meta property="og:title" content="IyonicBots Business GPT | AI-Powered Business Automation">
+    <meta property="og:description" content="Transform your business with AI-driven chatbots and automation tools powered by IyonicBots Business GPT.">
+    <meta property="og:image" content="https://cdn-icons-png.flaticon.com/512/4712/4712027.png">
+    <meta property="og:url" content="https://iyonicbots.iyonicorp.com/gpt">
+    <meta property="og:type" content="website">
+
+    <!-- ✅ Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="IyonicBots Business GPT | AI for Business Automation">
+    <meta name="twitter:description" content="Smart AI chatbots and business automation powered by IyonicBots Business GPT.">
+    <meta name="twitter:image" content="https://cdn-icons-png.flaticon.com/512/4712/4712027.png">
+
+    <!-- ✅ Canonical URL (Avoid Duplicate Content Issues) -->
+    <link rel="canonical" href="https://iyonicbots.iyonicorp.com/gpt">
+
+    <!-- ✅ Favicon -->
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/4712/4712027.png" type="image/x-icon">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+        body { height: 100vh; display: flex; flex-direction: column; background: #1b1b32; color: white; justify-content: center; align-items: center; overflow: hidden; }
+        
+        /* ✅ Chat container: full height & width */
+        .chat-container { width: 100%; height: 100vh; display: flex; flex-direction: column; background: white; }
+
+        /* ✅ Full-size header */
+        .chat-header { height: 12%; background: #007bff; color: white; display: flex; align-items: center; justify-content: center; font-size: 22px; font-weight: bold; }
+
+        /* ✅ Chat messages section */
+        .chat-messages { flex: 1; padding: 15px; overflow-y: auto; background: #f4f4f4; display: flex; flex-direction: column; }
+        .message { max-width: 75%; padding: 10px; margin: 5px; border-radius: 8px; word-wrap: break-word; font-size: 16px; }
+        .user-message { align-self: flex-end; background: #007bff; color: white; }
+        .bot-message { align-self: flex-start; background: #333; color: white; }
+
+        /* ✅ Full-width text input & button */
+        .chat-footer { display: flex; padding: 10px; background: #222; }
+        .chat-footer input { flex: 1; padding: 15px; border: none; background: #333; color: white; font-size: 18px; outline: none; border-radius: 0; }
+        .chat-footer button { padding: 15px; background: #007bff; border: none; color: white; cursor: pointer; border-radius: 0; }
+
+        /* ✅ Mobile-friendly adjustments */
+        @media (max-width: 768px) {
+            .chat-header { font-size: 18px; }
+            .chat-footer input, .chat-footer button { font-size: 16px; padding: 12px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="chat-container">
+        <div class="chat-header">
+            Business gpt
+            <button onclick="window.location.href='https://iyonicbots.iyonicorp.com'" style="position: absolute; right: 20px; background: #ff5722; color: white; border: none; padding: 10px 20px; cursor: pointer; border-radius: 5px;">Home</button>
+        </div>
+        <div class="chat-messages" id="chatMessages"></div>
+        <div class="chat-footer">
+            <input type="text" id="chatInput" placeholder="Type a message..." autocomplete="off">
+            <button id="sendButton">Send</button>
+        </div>
+    </div>
+
+    <!-- ✅ Adding Message Sounds -->
+    <audio id="sendSound" src="sounds/mixkit-long-pop-2358.wav"></audio>
+    <audio id="receiveSound" src="sounds/mixkit-bubble-pop-up-alert-notification-2357.wav"></audio>
+
+    <script>
+        document.getElementById("sendButton").addEventListener("click", sendMessage);
+        document.getElementById("chatInput").addEventListener("keydown", function(event) {
+            if (event.key === "Enter") sendMessage();
+        });
+
+        function playSound(soundId) {
+            document.getElementById(soundId).play();
+        }
+
+        function loadChatHistory() {
+            try {
+                let chatMessages = document.getElementById("chatMessages");
+                let storedMessages = localStorage.getItem("chatHistory");
+                storedMessages = storedMessages ? JSON.parse(storedMessages) : [];
+
+                chatMessages.innerHTML = "";
+                storedMessages.forEach(msg => {
+                    let messageBubble = document.createElement("div");
+                    messageBubble.classList.add("message", msg.type);
+                    messageBubble.textContent = msg.text;
+                    chatMessages.appendChild(messageBubble);
+                });
+
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            } catch (error) {
+                console.error("Error loading chat history:", error);
+                localStorage.removeItem("chatHistory");
+            }
+        }
+
+        function saveMessage(type, text) {
+            try {
+                let chatHistory = localStorage.getItem("chatHistory");
+                chatHistory = chatHistory ? JSON.parse(chatHistory) : [];
+
+                chatHistory.push({ type, text });
+                localStorage.setItem("chatHistory", JSON.stringify(chatHistory));
+            } catch (error) {
+                console.error("Error saving chat history:", error);
+                localStorage.removeItem("chatHistory");
+            }
+        }
+
+        function sendMessage() {
+            let inputField = document.getElementById("chatInput");
+            let userMessage = inputField.value.trim();
+            if (!userMessage) return;
+
+            let chatMessages = document.getElementById("chatMessages");
+
+            let userBubble = document.createElement("div");
+            userBubble.classList.add("message", "user-message");
+            userBubble.textContent = userMessage;
+            chatMessages.appendChild(userBubble);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+
+            saveMessage("user-message", userMessage);
+            playSound("sendSound");
+
+            fetch("https://iyonicbots.onrender.com/chat", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ message: userMessage })
+            })
+            .then(response => response.json())
+            .then(data => {
+                let botBubble = document.createElement("div");
+                botBubble.classList.add("message", "bot-message");
+                botBubble.textContent = data.response;
+                chatMessages.appendChild(botBubble);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+
+                saveMessage("bot-message", data.response);
+                playSound("receiveSound");
+            })
+            .catch(error => {
+                console.error("Error fetching response:", error);
+            });
+
+            inputField.value = "";
+        }
+
+        window.onload = loadChatHistory;
+    </script>
+
+</body>
+</html>

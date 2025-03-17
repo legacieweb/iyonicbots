@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - IyonicBots</title>
+    
+    <!-- ✅ Tailwind CSS for Styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- ✅ SEO Meta Tags -->
+    <meta name="description" content="Contact IyonicBots for AI chatbot solutions, automation, and business AI services.">
+    <meta name="keywords" content="Contact IyonicBots, AI Chatbot Support, AI Automation, Business AI">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/4712/4712027.png" type="image/x-icon">
+
+    <!-- ✅ Custom CSS Animations -->
+    <style>
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .animate-slideUp { animation: slideUp 1s ease-in-out; }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        .animate-pulse:hover { animation: pulse 0.5s ease-in-out; }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .animate-bounce { animation: bounce 1.5s infinite; }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+
+    <!-- 🔥 Header with Home Button -->
+    <header class="bg-black py-4 px-6 flex justify-between items-center shadow-md">
+        <h1 class="text-2xl font-bold text-orange-500">Contact us</h1>
+        <a href="https://iyonicbots.iyonicorp.com" class="bg-orange-500 hover:bg-orange-600 text-white py-2 px-4 rounded transition animate-pulse">🏠 Home</a>
+    </header>
+
+    <!-- 🔥 Contact Form Section -->
+    <section class="max-w-4xl mx-auto my-10 p-6 bg-gray-800 rounded-lg shadow-lg animate-slideUp">
+        <h2 class="text-3xl font-bold text-center text-orange-400">🚀 Let's Connect</h2>
+        <p class="text-gray-300 text-center mt-2">
+            Have a question? Need help? Fill out the form below and we'll get back to you!
+        </p>
+
+        <!-- Contact Form -->
+        <form id="contactForm" class="mt-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <input type="text" id="name" name="name" placeholder="Your Name" required class="p-3 rounded bg-gray-700 text-white focus:ring focus:ring-orange-500 outline-none">
+                <input type="email" id="email" name="email" placeholder="Your Email" required class="p-3 rounded bg-gray-700 text-white focus:ring focus:ring-orange-500 outline-none">
+            </div>
+            <input type="text" id="subject" name="subject" placeholder="Subject" required class="p-3 w-full mt-4 rounded bg-gray-700 text-white focus:ring focus:ring-orange-500 outline-none">
+            <textarea id="message" name="message" rows="5" placeholder="Your Message" required class="p-3 w-full mt-4 rounded bg-gray-700 text-white focus:ring focus:ring-orange-500 outline-none"></textarea>
+
+            <button type="submit" class="w-full mt-6 bg-orange-500 hover:bg-orange-600 text-white py-3 rounded transition animate-pulse">
+                📩 Send Message
+            </button>
+        </form>
+
+        <!-- Response Message -->
+        <p id="responseMessage" class="text-center text-green-400 mt-4 hidden"></p>
+    </section>
+
+    <!-- 🔥 Footer Section -->
+    <footer class="bg-black text-white py-10">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8 text-center">
+            <div>
+                <h2 class="text-xl font-bold text-orange-500">IyonicBots</h2>
+                <p class="text-gray-400 mt-2">AI automation & smart chatbots for business growth.</p>
+            </div>
+            <div>
+                <h3 class="text-lg font-bold text-orange-500">Quick Links</h3>
+                <ul class="mt-2">
+                    <li><a href="../about" class="hover:text-orange-400">ℹ️ About Us</a></li>
+                    <li><a href="../terms" class="hover:text-orange-400">📜 Terms of Service</a></li>
+                    <li><a href="../privacy" class="hover:text-orange-400">🔒 Privacy Policy</a></li>
+                </ul>
+            </div>
+  
+
+        <div class="text-center mt-8 text-gray-400">
+            <p>© 2025 IyonicBots | All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <!-- ✅ JavaScript to Handle Form Submission -->
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", async function(event) {
+            event.preventDefault();
+
+            let formData = {
+                name: document.getElementById("name").value,
+                email: document.getElementById("email").value,
+                subject: document.getElementById("subject").value,
+                message: document.getElementById("message").value
+            };
+
+            let response = await fetch("https://iyonicbots.onrender.com/send-email", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(formData)
+            });
+
+            let result = await response.json();
+
+            if (result.success) {
+                document.getElementById("responseMessage").textContent = "✅ Message sent successfully!";
+                document.getElementById("responseMessage").classList.remove("hidden");
+                document.getElementById("contactForm").reset();
+            } else {
+                document.getElementById("responseMessage").textContent = "❌ Failed to send message. Please try again.";
+                document.getElementById("responseMessage").classList.remove("hidden");
+            }
+        });
+    </script>
+
+</body>
+</html>

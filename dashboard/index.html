@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - IyonicBots</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/4712/4712027.png" type="image/x-icon">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .sidebar {
+            width: 250px;
+            background: #121212;
+            color: white;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            height: 100%;
+            left: -260px; /* Hidden by default */
+            transition: left 0.3s ease-in-out;
+        }
+        .sidebar.open {
+            left: 0; /* Slide in when opened */
+        }
+        .sidebar h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .sidebar a {
+            text-decoration: none;
+            color: white;
+            display: block;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .sidebar a:hover, .sidebar a.active {
+            background: #ff6600;
+        }
+        .logout-btn {
+            margin-top: auto;
+            background: red;
+            text-align: center;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .logout-btn:hover {
+            background: darkred;
+        }
+        .main-content {
+            flex: 1;
+            padding: 30px;
+            margin-left: 0px; /* Adjusted for sidebar */
+            width: 100%;
+            transition: margin-left 0.3s ease-in-out;
+        }
+        .user-info {
+            font-size: 16px;
+            margin-bottom: 20px;
+            text-align: right;
+        }
+        .bot-section {
+            display: none;
+        }
+        .active-section {
+            display: block;
+        }
+        .menu-btn {
+            position: fixed;
+            top: 15px;
+            left: 20px;
+            background: #ff6600;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            z-index: 1000;
+        }
+        .menu-btn:hover {
+            background: #cc5200;
+        }
+        @media (min-width: 768px) {
+            .sidebar {
+                left: 0; /* Always visible on large screens */
+            }
+            .menu-btn {
+                display: none; /* Hide menu button on large screens */
+            }
+            .main-content {
+                margin-left: 250px; /* Adjust for sidebar */
+            }
+        }
+    </style>
+</head>
+<body onload="checkLogin()">
+
+    <!-- Sidebar Menu -->
+    <div class="sidebar" id="sidebar">
+        <h2>IyonicBots</h2>
+        <a href="#" onclick="showSection('businessai')" class="business-btn">🏢 Business AI</a>
+        <a href="#" onclick="showSection('chatbot')" class="active">🤖 AI Chatbots</a>
+        <a href="#" onclick="showSection('salesbot')">💰 AI Sales Bots</a>
+        <a href="#" onclick="showSection('voicebot')">🎤 AI Voice Assistant</a>
+        <a href="#" onclick="showSection('automationbot')">⚙️ AI Process Automation</a>
+        <div class="logout-btn" onclick="logout()">🚪 Logout</div>
+    </div>
+
+    <!-- Menu Button for Mobile -->
+    <button class="menu-btn" id="menu-btn" onclick="toggleSidebar()">☰ Menu</button>
+
+    <!-- Main Content -->
+    <div class="main-content" id="main-content">
+        <div class="user-info">
+            Welcome, <span id="user-name">User</span>
+        </div>
+
+  <!-- Business AI Section -->
+<div id="businessai" class="bot-section">
+    <h2>🚀 IyonicBots GPT – The Ultimate AI for Your Business!</h2>
+    <p><strong>Transform your business with cutting-edge AI.</strong> IyonicBots GPT is not just another chatbot—it’s your <em>personalized</em>, <em>intelligent</em>, and <em>high-performing</em> AI assistant designed to elevate your brand.</p>
+    
+    <h3>🔥 Why Businesses Love IyonicBots GPT:</h3>
+    <ul>
+        <li>✅ <strong>AI That Knows Your Business:</strong> Fully customizable to match your brand’s tone and objectives.</li>
+        <li>✅ <strong>Supercharged Sales & Lead Generation:</strong> Convert visitors into paying customers <em>effortlessly</em>.</li>
+        <li>✅ <strong>24/7 Customer Support:</strong> AI-powered assistance that never sleeps, never takes breaks, and never misses a query.</li>
+        <li>✅ <strong>Seamless Integration:</strong> Embed directly on your website, social media, or messaging platforms.</li>
+        <li>✅ <strong>Smart Learning:</strong> Adapts and improves over time to provide the best user experience.</li>
+    </ul>
+
+    <h3>💼 Who Is It For?</h3>
+    <p>If you run an <strong>eCommerce store, service business, SaaS company, or customer-driven enterprise</strong>, this AI is <em>exactly</em> what you need to <strong>save time, increase revenue, and improve customer satisfaction.</strong></p>
+
+    <h3>🔗 Get Started Today!</h3>
+    <p>Unlock the full potential of AI for your business. Click below to create your custom AI assistant now!</p>
+
+    <a href="../gpt" class="setup-btn" style="display:inline-block; background:#ff6600; color:white; padding:10px 20px; border-radius:5px; text-decoration:none; font-weight:bold;">Use our AI Now</a>
+</div>
+
+
+        <!-- AI Chatbots Section -->
+      <!-- AI Chatbots Section -->
+<div id="chatbot" class="bot-section active-section">
+    <h2>🤖 AI Chatbot – Smart Conversations, 24/7</h2>
+    <p>Revolutionize your customer interactions with an AI chatbot that works tirelessly, providing instant, intelligent responses to your customers, anytime, anywhere.</p>
+
+    <h3>🚀 Why Choose Our AI Chatbot?</h3>
+    <ul>
+        <li>✅ <strong>24/7 Availability:</strong> Never miss a customer inquiry, even outside business hours.</li>
+        <li>✅ <strong>Instant Responses:</strong> AI-powered chat that engages visitors in real time.</li>
+        <li>✅ <strong>Lead Generation:</strong> Capture and qualify leads automatically.</li>
+        <li>✅ <strong>Smart Learning:</strong> Our chatbot continuously improves its responses.</li>
+        <li>✅ <strong>Seamless Integrations:</strong> Works with websites, social media, and CRM platforms.</li>
+    </ul>
+
+    <h3>🔄 AI Process Automation – Work Smarter, Not Harder</h3>
+    <p>Boost productivity by automating routine tasks, minimizing errors, and scaling operations effortlessly.</p>
+
+    <h3>⚡ Key Benefits:</h3>
+    <ul>
+        <li>✅ <strong>Task Automation:</strong> Reduce manual work by automating repetitive tasks.</li>
+        <li>✅ <strong>Cost Efficiency:</strong> Lower operational costs with AI-driven efficiency.</li>
+        <li>✅ <strong>Error Reduction:</strong> AI ensures accuracy and minimizes human error.</li>
+        <li>✅ <strong>Scalability:</strong> Easily scale operations as your business grows.</li>
+    </ul>
+
+    <h3>🛠️ How AI Process Automation Works:</h3>
+    <ol>
+        <li>🔍 <strong>Identify Repetitive Tasks:</strong> Find areas where automation can save time.</li>
+        <li>🎓 <strong>Train AI to Perform Tasks:</strong> AI learns your workflows for optimal execution.</li>
+        <li>🚀 <strong>Deploy Automation Bot:</strong> Put AI into action and streamline operations.</li>
+        <li>📊 <strong>Monitor & Optimize Performance:</strong> Track results and refine processes.</li>
+    </ol>
+
+    <h3>🔗 Get Started Today!</h3>
+    <p>Don't let manual tasks slow you down. Click below to build your AI chatbot and start automating now!</p>
+
+    <a href="../mybot" class="setup-btn" style="display:inline-block; background:#ff6600; color:white; padding:10px 20px; border-radius:5px; text-decoration:none; font-weight:bold;">🚀 Launch AI Chatbot</a>
+</div>
+
+
+        <!-- Sales Bots Section -->
+    <!-- Sales Bots Section -->
+<div id="salesbot" class="bot-section">
+    <h2>💰 AI Sales Bots – Convert Visitors into Customers Effortlessly</h2>
+    <p>Revolutionize your sales process with AI-powered bots that engage visitors, capture leads, and drive revenue—all on autopilot.</p>
+
+    <h3>🚀 Why Use AI Sales Bots?</h3>
+    <ul>
+        <li>✅ <strong>Automated Lead Generation:</strong> Capture and qualify leads 24/7 without human intervention.</li>
+        <li>✅ <strong>Personalized Engagement:</strong> AI-powered conversations tailored to customer preferences.</li>
+        <li>✅ <strong>Sales Funnel Automation:</strong> Move prospects through the sales cycle automatically.</li>
+        <li>✅ <strong>CRM & Analytics Integration:</strong> Sync with your CRM for better tracking & insights.</li>
+    </ul>
+
+    <h3>📈 How AI Sales Bots Work:</h3>
+    <ol>
+        <li>🔍 <strong>AI Identifies & Engages Leads:</strong> Interacts with potential customers and gathers insights.</li>
+        <li>💬 <strong>Conversational Sales Guidance:</strong> AI nurtures leads and recommends the best products or services.</li>
+        <li>📩 <strong>Automated Follow-ups:</strong> AI keeps the conversation going and reminds prospects about your offerings.</li>
+        <li>🤝 <strong>Handoff to Human Sales Team:</strong> When needed, AI seamlessly transfers leads to your sales representatives.</li>
+    </ol>
+
+    <!-- Alert Box for Bot Status -->
+    <div style="background: #ffcc00; color: #000; padding: 15px; border-radius: 8px; text-align: center; font-weight: bold; font-size: 18px; margin-top: 20px;">
+        ⚠️ Bot Not Yet Created  
+        <p style="font-size: 14px; margin-top: 5px;">We are actively developing our AI Sales Bots to deliver the best experience. Stay tuned—we will notify you as soon as it's ready!</p>
+    </div>
+</div>
+
+
+        <!-- Voice Assistant Section -->
+    <!-- Voice Assistant Section -->
+<div id="voicebot" class="bot-section">
+    <h2>🎤 AI Voice Assistant – The Future of Customer Interaction</h2>
+    <p>Revolutionize your customer experience with AI-powered voice assistants that provide instant, natural, and hands-free interactions.</p>
+
+    <h3>🚀 Why Use AI Voice Assistants?</h3>
+    <ul>
+        <li>✅ <strong>24/7 Availability:</strong> Always available to assist customers, even outside business hours.</li>
+        <li>✅ <strong>Human-Like Conversations:</strong> Advanced NLP ensures smooth and natural customer interactions.</li>
+        <li>✅ <strong>Multilingual Support:</strong> Communicate with customers in multiple languages effortlessly.</li>
+        <li>✅ <strong>Voice Commerce:</strong> Enable voice-based shopping and transactions for seamless sales.</li>
+    </ul>
+
+    <h3>🗣️ How AI Voice Assistants Work:</h3>
+    <ol>
+        <li>🎙️ <strong>User Speaks to AI Assistant:</strong> Customers interact using natural speech.</li>
+        <li>🧠 <strong>AI Understands & Processes Request:</strong> Advanced AI interprets the command.</li>
+        <li>⚡ <strong>Provides Instant Response:</strong> AI delivers accurate and quick responses.</li>
+        <li>📈 <strong>Improves with Machine Learning:</strong> AI adapts and enhances conversations over time.</li>
+    </ol>
+
+    <!-- Alert Box for Bot Status -->
+    <div style="background: #ffcc00; color: #000; padding: 15px; border-radius: 8px; text-align: center; font-weight: bold; font-size: 18px; margin-top: 20px;">
+        ⚠️ Bot Not Yet Created  
+        <p style="font-size: 14px; margin-top: 5px;">We are actively developing our AI Voice Assistants to deliver the best experience. Stay tuned—we will notify you as soon as it's ready!</p>
+    </div>
+</div>
+
+<!-- Process Automation Section -->
+<div id="automationbot" class="bot-section">
+    <h2>⚙️ AI Process Automation – Streamline Your Business Operations</h2>
+    <p>Enhance efficiency, reduce costs, and eliminate errors by automating repetitive tasks with cutting-edge AI solutions.</p>
+
+    <h3>🚀 Why Use AI Process Automation?</h3>
+    <ul>
+        <li>✅ <strong>Task Automation:</strong> Reduce manual work by automating repetitive tasks.</li>
+        <li>✅ <strong>Cost Efficiency:</strong> Lower operational costs with AI-driven efficiency.</li>
+        <li>✅ <strong>Error Reduction:</strong> AI ensures accuracy and minimizes human error.</li>
+        <li>✅ <strong>Scalability:</strong> Easily scale operations as your business grows.</li>
+    </ul>
+
+    <h3>🔄 How AI Process Automation Works:</h3>
+    <ol>
+        <li>📝 <strong>Identify Repetitive Tasks:</strong> Recognize workflows that can be automated.</li>
+        <li>🎓 <strong>Train AI to Perform Tasks:</strong> AI learns the process and optimizes execution.</li>
+        <li>🚀 <strong>Deploy Automation Bot:</strong> The AI takes over repetitive and time-consuming tasks.</li>
+        <li>📊 <strong>Monitor & Optimize Performance:</strong> Continuously track and refine automation for better results.</li>
+    </ol>
+
+    <!-- Alert Box for Bot Status -->
+    <div style="background: #ffcc00; color: #000; padding: 15px; border-radius: 8px; text-align: center; font-weight: bold; font-size: 18px; margin-top: 20px;">
+        ⚠️ Bot Not Yet Created  
+        <p style="font-size: 14px; margin-top: 5px;">We are actively developing our AI Process Automation bots to provide the best experience. Stay tuned—we will notify you as soon as it's ready!</p>
+    </div>
+</div>
+
+
+    <script>
+        function checkLogin() {
+            let user = JSON.parse(localStorage.getItem("user"));
+            if (!user) {
+                window.location.href = "../login"; // Redirect if not logged in
+            } else {
+                document.getElementById("user-name").textContent = user.name;
+            }
+        }
+
+        function logout() {
+            localStorage.removeItem("user");
+            window.location.href = "../login";
+        }
+
+        function showSection(section) {
+            document.querySelectorAll('.bot-section').forEach(section => section.classList.remove('active-section'));
+            document.getElementById(section).classList.add('active-section');
+            document.querySelectorAll('.sidebar a').forEach(link => link.classList.remove('active'));
+            event.target.classList.add('active');
+            if (window.innerWidth < 768) {
+                toggleSidebar(); // Close sidebar when a menu item is clicked
+            }
+        }
+
+        function toggleSidebar() {
+            let sidebar = document.getElementById("sidebar");
+            let menuBtn = document.getElementById("menu-btn");
+
+            if (sidebar.classList.contains("open")) {
+                sidebar.classList.remove("open");
+                menuBtn.style.display = "block"; // Show menu button when sidebar is closed
+            } else {
+                sidebar.classList.add("open");
+                menuBtn.style.display = "none"; // Hide menu button when sidebar is open
+            }
+        }
+    </script>
+
+</body>
+</html>

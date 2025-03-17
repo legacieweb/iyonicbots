@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- ✅ Optimized Title -->
+        <title>IyonicBots | AI Automation & Smart Chatbots for Business Growth</title>
+    
+        <!-- ✅ Meta Description (Appears on Google Search) -->
+        <meta name="description" content="IyonicBots provides AI automation, smart chatbots, and AI-powered business solutions to enhance customer interactions and sales. Get started with AI today!">
+    
+        <!-- ✅ Keywords for SEO -->
+        <meta name="keywords" content="AI chatbots, AI automation, business chatbots, AI customer support, AI lead generation, automated sales bots, AI voice assistants, AI process automation, IyonicBots, iyonicbots.com cheap bots, free bots">
+    
+        <!-- ✅ Open Graph for Social Media Sharing -->
+        <meta property="og:title" content="IyonicBots | AI Automation & Smart Chatbots">
+        <meta property="og:description" content="Transform your business with AI-powered chatbots, automation, and smart sales bots. Start your AI journey today with IyonicBots!">
+        <meta property="og:image" content="https://cdn-icons-png.flaticon.com/512/4712/4712027.png">
+        <meta property="og:url" content="https://iyonicbots.iyonicorp.com">
+        <meta property="og:type" content="website">
+    
+        <!-- ✅ Twitter Card -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="IyonicBots | AI Automation & Smart Chatbots">
+        <meta name="twitter:description" content="AI-powered chatbots and automation tools designed to streamline business processes and enhance customer experiences.">
+        <meta name="twitter:image" content="https://cdn-icons-png.flaticon.com/512/4712/4712027.png">
+    
+        <!-- ✅ Canonical URL (Prevents Duplicate Content Issues) -->
+        <link rel="canonical" href="https://iyonicbots.iyonicorp.com">
+    
+        <!-- ✅ Favicon -->
+        <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/4712/4712027.png" type="image/x-icon">
+    
+        <!-- ✅ Schema Markup for SEO (Structured Data) -->
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "IyonicBots",
+          "url": "https://iyonicbots.iyonicorp.com",
+          "logo": "https://cdn-icons-png.flaticon.com/512/4712/4712027.png",
+          "description": "IyonicBots provides AI automation, chatbots, and business AI solutions.",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+1234567890",
+            "contactType": "Customer Service"
+          }
+        }
+        </script>
+    
+        <!-- ✅ Robots Meta Tag (Allows Google to Index the Site) -->
+        <meta name="robots" content="index, follow">
+    
+        <!-- ✅ CSS & Google Fonts -->
+        <link rel="stylesheet" href="styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background: #121212;
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 24px;
+            font-weight: bold;
+            padding: 15px 30px;
+        }
+        .nav-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        .nav-buttons a {
+            text-decoration: none;
+            color: white;
+            background: #ff6600;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .nav-buttons a:hover {
+            background: #e55d00;
+        }
+        .hero {
+            position: relative;
+            text-align: center;
+            color: white;
+            background: url('https://media.planview.com/clarizen/wp-content/upload/2017/10/ai-bots.jpg') no-repeat center center/cover;
+            padding: 80px 20px;
+        }
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 600px;
+            margin: auto;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            line-height: 1.5;
+        }
+        .cta-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 25px;
+            background: #ff6600;
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+        .container {
+            padding: 50px 20px;
+            text-align: center;
+        }
+        .bots-showcase {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .bot-card {
+            background: white;
+            padding: 20px;
+            width: 320px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+            color: inherit;
+        }
+        .bot-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+        .bot-card img {
+            width: 100px;
+            height: 100px;
+        }
+        .bot-card h3 {
+            font-size: 1.5rem;
+            margin: 10px 0;
+        }
+        .bot-card p {
+            font-size: 1rem;
+            color: #555;
+        }
+        .cta {
+            background: #ff6600;
+            color: white;
+            padding: 30px;
+            text-align: center;
+            margin-top: 30px;
+        }
+        .cta a {
+            background: white;
+            color: #ff6600;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        IyonicBots
+        <div class="nav-buttons">
+            <a href="login/">Login</a>
+            <a href="signup/">Sign Up</a>
+        </div>
+    </header>
+    <script src="https://iyonicbots.onrender.com/get-bot-script/67d4ff2345bba920115e4050"></script>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Supercharge Your Business with AI Automation</h1>
+            <p>We build and manage AI-powered bots that automate customer interactions, sales, and engagement—saving you time and boosting satisfaction.</p>
+            <a href="signup/" class="cta-button">Get Started</a>
+        </div>
+    </section>
+
+    <section class="container">
+        <h2>Types of AI Bots We Provide</h2>
+        <div class="bots-showcase">
+            <a href="gpt/" class="bot-card">
+                <img src="https://i.imgur.com/tObwZwi.png" alt="GPT Bot">
+                <h3>Business GPT</h3>
+                <p>Advanced AI bots powered by GPT technology, capable of understanding and generating human-like text for various business applications.</p>
+            </a>
+            
+            <a href="chatbots/" class="bot-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/4712/4712027.png" alt="Chatbot">
+                <h3>AI Chatbots</h3>
+                <p>24/7 virtual assistants for instant customer support, answering queries, and guiding users.</p>
+            </a>
+            <a href="salesbots/" class="bot-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/2903/2903414.png" alt="Sales Bot">
+                <h3>AI Sales Bots</h3>
+                <p>Smart bots that engage visitors, generate leads, and help convert them into paying customers.</p>
+            </a>
+            <a href="voiceassistantce/" class="bot-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/3898/3898085.png" alt="AI Voice Assistant">
+                <h3>AI Voice Assistants</h3>
+                <p>Integrate AI-powered voice support into your business for seamless communication.</p>
+            </a>
+            <a href="automationbot/" class="bot-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/3756/3756788.png" alt="AI Automation">
+                <h3>AI Process Automation</h3>
+                <p>Let AI handle repetitive business tasks, increasing efficiency and productivity.</p>
+            </a>
+        </div>
+    </section>
+<!-- Pricing Section -->
+<section id="pricing" style="display:flex; justify-content:center; align-items:center; min-height:100vh; background:#121212; color:white; font-family:sans-serif; text-align:center;">
+    <div style="position:relative; background:transparent; padding:40px; border-radius:15px; box-shadow:0 0 20px rgba(255, 102, 0, 0.6); transition:0.4s ease-in-out; max-width:400px; width:100%;">
+        
+        <!-- Animated Go Pro Badge -->
+        <div style="position:absolute; top:-20px; left:50%; transform:translateX(-50%); background:#ff6600; color:white; padding:10px 20px; border-radius:20px; font-size:14px; font-weight:bold; animation:pulse 1.5s infinite;">
+            🚀 GO PRO - Unlock Unlimited AI!
+        </div>
+
+        <h2 style="font-size:28px; font-weight:bold; margin-bottom:10px;">🔥 Go Pro Plan</h2>
+        <p style="font-size:16px; color:#ffcc00; margin-bottom:20px;">💡 30-Day Free Trial Included</p>
+
+        <!-- Pricing -->
+        <h3 style="font-size:34px; color:#ff6600; margin-bottom:10px;">
+            $36<span style="font-size:18px; color:#888;"> / month</span>
+        </h3>
+        <p style="color:#bbb; font-size:14px; text-decoration:line-through;">$432 / year</p>
+        <p style="font-size:18px; color:#00ff99; font-weight:bold;">🎉 Now: $345.60 / year (Save 20%)</p>
+
+        <!-- Features -->
+        <ul style="list-style:none; padding:0; margin:20px 0; font-size:16px; text-align:left;">
+            <li style="margin:10px 0;">✅ <strong>Unlimited</strong> Business GPT</li>
+            <li style="margin:10px 0;">✅ <strong>Unlimited</strong> Custom AI Chatbots</li>
+            <li style="margin:10px 0;">✅ <strong>Unlimited</strong> AI Sales Bots</li>
+            <li style="margin:10px 0;">✅ <strong>Unlimited</strong> AI Voice Assistants</li>
+            <li style="margin:10px 0;">✅ <strong>Unlimited</strong> AI Process Automation</li>
+            <li style="margin:10px 0;">✅ <strong>24/7 AI Support</strong> & Smart Assistance</li>
+        </ul>
+
+        <!-- CTA Button -->
+        <a href="signup/" style="display:inline-block; background:#ff6600; color:white; padding:15px 25px; border-radius:10px; font-size:18px; font-weight:bold; text-decoration:none; transition:0.3s ease-in-out; box-shadow:0 4px 10px rgba(255, 102, 0, 0.6);">
+            🚀 Get Started Now
+        </a>
+    </div>
+</section>
+<!-- 🔥 FOOTER SECTION -->
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-logo">
+            <h2>IyonicBots</h2>
+            <p>AI Automation & Smart Chatbots for Business Growth.</p>
+        </div>
+
+        <div class="footer-links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="about/">📌 About Us</a></li>
+                <li><a href="contact/">📞 Contact</a></li>
+                <li><a href="terms/">Terms</a></li>
+                <li><a href="blog/">📰 Blog</a></li>
+                <li><a href="privacy/">privacy</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-services">
+            <h3>Our AI Solutions</h3>
+            <ul>
+                <li><a href="chatbots/">🤖 AI Chatbots</a></li>
+                <li><a href="salesbots/">💰 AI Sales Bots</a></li>
+                <li><a href="voiceassistantce/">🎤 AI Voice Assistants</a></li>
+                <li><a href="automationbot/">⚙️ AI Process Automation</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-contact">
+            <h3>📧 Stay Updated</h3>
+            <p>Subscribe to our newsletter for AI trends & updates!</p>
+            
+            <form id="subscribe-form">
+                <input type="email" id="subscriber-email" placeholder="Enter your email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+            
+            <p id="subscribe-message" class="text-green-400"></p>
+        </div>
+        
+        <!-- ✅ JavaScript for Form Submission -->
+        <script>
+        document.getElementById("subscribe-form").addEventListener("submit", async function(event) {
+            event.preventDefault();
+        
+            let email = document.getElementById("subscriber-email").value;
+        
+            let response = await fetch("https://iyonicbots.onrender.com/subscribe", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ email })
+            });
+        
+            let result = await response.json();
+        
+            if (result.success) {
+                document.getElementById("subscribe-message").textContent = "✅ Subscribed successfully!";
+                document.getElementById("subscribe-form").reset();
+            } else {
+                document.getElementById("subscribe-message").textContent = "❌ Subscription failed. Try again.";
+            }
+        });
+        </script>
+        
+
+    <div class="footer-bottom">
+        <p>© 2024 IyonicBots | All Rights Reserved</p>
+    </div>
+</footer>
+
+<!-- Keyframe Animations -->
+<style>
+    /* Pulsating Effect for Go Pro Badge */
+    @keyframes pulse {
+        0% { transform: translateX(-50%) scale(1); }
+        50% { transform: translateX(-50%) scale(1.1); }
+        100% { transform: translateX(-50%) scale(1); }
+    }
+
+    /* Hover Effect */
+    #pricing div:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 30px rgba(255, 102, 0, 0.8);
+    }
+    /* 🔥 FOOTER STYLES */
+.footer {
+    background: #121212;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.footer h2, .footer h3 {
+    color: #ff6600;
+}
+
+.footer-logo p {
+    font-size: 14px;
+    color: #aaa;
+}
+
+.footer-links ul, .footer-services ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li, .footer-services ul li {
+    margin: 8px 0;
+}
+
+.footer-links ul li a, .footer-services ul li a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-links ul li a:hover, .footer-services ul li a:hover {
+    color: #ff6600;
+}
+
+.footer-contact input {
+    width: 80%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.footer-contact button {
+    background: #ff6600;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.footer-contact button:hover {
+    background: #e65c00;
+}
+
+
+.footer-bottom {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #aaa;
+}
+
+</style>
+<script>document.getElementById("subscribe-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+    
+    let email = document.getElementById("email").value;
+    let message = document.querySelector(".subscribe-message");
+
+    if (email.includes("@")) {
+        message.textContent = "✅ Subscription successful!";
+        message.style.color = "green";
+        document.getElementById("email").value = "";
+    } else {
+        message.textContent = "❌ Please enter a valid email.";
+        message.style.color = "red";
+    }
+});
+</script>
+</body>
+</html>
