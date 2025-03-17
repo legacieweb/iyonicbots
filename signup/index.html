@@ -181,26 +181,27 @@
 
     <script>
         async function registerUser(event) {
-            event.preventDefault();
+    event.preventDefault();
 
-            const name = document.getElementById("name").value;
-            const email = document.getElementById("email").value;
-            const password = document.getElementById("password").value;
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
 
-            const response = await fetch("https://iyonicbots.onrender.com/register", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ name, email, password }),
-            });
+    const response = await fetch("https://iyonicbots.onrender.com/register", {  // ✅ Corrected URL
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, password }),
+    });
 
-            const data = await response.json();
-            if (response.status === 201) {
-                alert(data.message);
-                window.location.href = "../login";
-            } else {
-                alert(data.message);
-            }
-        }
+    const data = await response.json();
+    if (response.status === 201) {
+        alert(data.message);
+        window.location.href = "../login";
+    } else {
+        alert(data.message);
+    }
+}
+
 
         // Create floating particles dynamically
         function createParticles() {
