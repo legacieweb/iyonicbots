@@ -62,7 +62,7 @@ app.post("/register", async (req, res) => {
         if (error) console.log(error);
     });
 
-    res.status(201).json({ message: "✔️Redirecting to login!! check email or spam email" });
+    res.status(201).json({ message: "✔️Redirecting to login!! check email or spam email later!" });
 });
 
 // 🔑 Login API
