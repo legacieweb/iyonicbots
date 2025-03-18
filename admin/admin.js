@@ -6,7 +6,7 @@ async function searchBotsByEmail() {
         return;
     }
 
-    let response = await fetch(`http://localhost:5000/get-bots-by-email/${email}`);
+    let response = await fetch(`https://iyonicbots.onrender.com/get-bots-by-email/${email}`);
     let data = await response.json();
 
     let botList = document.getElementById("botList");
@@ -35,21 +35,21 @@ async function searchBotsByEmail() {
 
 // Function to suspend a bot
 async function suspendBot(botId) {
-    await fetch(`http://localhost:5000/admin/suspend-bot/${botId}`, { method: "PUT" });
+    await fetch(`https://iyonicbots.onrender.com/admin/suspend-bot/${botId}`, { method: "PUT" });
     alert("Bot suspended.");
     loadBots();
 }
 
 // Function to unsuspend a bot
 async function unsuspendBot(botId) {
-    await fetch(`http://localhost:5000/admin/unsuspend-bot/${botId}`, { method: "PUT" });
+    await fetch(`https://iyonicbots.onrender.com/admin/unsuspend-bot/${botId}`, { method: "PUT" });
     alert("Bot unsuspended.");
     loadBots();
 }
 
 // Function to load all bots on page load
 async function loadBots() {
-    let response = await fetch("http://localhost:5000/get-all-bots");
+    let response = await fetch("https://iyonicbots.onrender.com/get-all-bots");
     let data = await response.json();
 
     let botList = document.getElementById("botList");
