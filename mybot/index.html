@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My bots</title>
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/4712/4712027.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body onload="checkLogin()">
+
+    <!-- Header -->
+    <header>
+        <h1>🚀 Build Your AI Chatbot</h1>
+        <button onclick="toggleSavedConversations()">📂 View My Bots</button>
+        <button onclick="dashboard()">📊 Dashboard</button>       
+    </header>
+   
+
+    <!-- Hidden Section for Saved Bots -->
+    <div id="savedConversations" class="hidden">
+        <h2>💾 My Saved Bots</h2>
+        <ul id="conversationList"></ul>
+    </div>
+
+    <div class="container">
+        <form id="botForm">
+            <h2>📝 Business Details</h2>
+            <input type="text" id="businessName" placeholder="Business Name" required>
+            <textarea id="businessDesc" placeholder="Describe your business..." required></textarea>
+
+            <h2>💬 Define Bot Conversations</h2>
+            <div id="conversationContainer"></div>
+            <button type="button" onclick="addConversation()">➕ Add Question</button>
+
+            <h2>🎨 Chat Badge Settings</h2>
+            <label>Badge Color:</label>
+            <input type="color" id="badgeColor" value="#0084FF">
+            <label>Position:</label>
+            <select id="badgePosition">
+                <option value="right">Bottom Right</option>
+                <option value="left">Bottom Left</option>
+            </select>
+
+            <button type="submit">Save My Chatbot</button>
+        </form>
+
+        <h3>📌 Integration Code</h3>
+        <textarea id="integrationCode" readonly></textarea>
+        <button onclick="copyIntegrationCode()">Copy Code</button>
+        
+
+    <script src="script.js"></script>
+</body>
+</html>
